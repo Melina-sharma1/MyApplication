@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="MyGoalAssignment.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+ <link rel="stylesheet" href="styles/site.css" />
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+        <header>
+            <h1>Welcome!</h1>
+        </header>
+
+        <nav class="auto-style1">
+            <ul>
+                <li><a href="Login.aspx">Login</a></li>
+                <li><a id="hlHome" href="Default.aspx">Home</a></li>
+                <li><a id="HyperLink7" href="Career.aspx">Career</a></li>
+                <li><a href="Fitness.aspx">Fitness</a></li>
+                <li><a href="Skill.aspx">Skills</a></li>
+            </ul>
+        </nav>
+
+        <article class="auto-style2">
+            <div class="bgcolor">
+                <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+
+        </article>
+
+
+    </form>
+
+
+</body>
+</html>

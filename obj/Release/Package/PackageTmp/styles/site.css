@@ -1,0 +1,83 @@
+﻿ 
+/* CSS styles for the header and sidebar */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 200px;
+    float: left;
+}
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+        nav a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+article {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    height: 500px;
+    box-sizing: border-box;
+}
+
+.auto-style1 {
+    height: 480px;
+}
+
+.auto-style2 {
+    height: 500px;
+}
+
+
+.auto-style3 {
+    background-image: url('../img/Sunset.jpg');
+    width: 87%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 489px;
+}
+
+
+.overlay p {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.8);
+    padding: 1rem;
+}
+
+.bgcolor {
+    background-color: gray;
+}
+
+.content-bg {
+    height: 489px;
+}
+ 
