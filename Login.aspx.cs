@@ -49,10 +49,12 @@ namespace MyGoalAssignment
             string U_Password = "";
             string U_FName = "";
             string U_LName = "";
+            int Id = 0;
 
             // get the value from the reader
             while (Myreader.Read())
             {
+                Id = Myreader.GetInt32(0);
                 U_Email = Myreader.GetString(Myreader.GetOrdinal("U_Email"));
                 U_Password = Myreader.GetString(Myreader.GetOrdinal("U_Password"));
                 U_FName = Myreader.GetString(Myreader.GetOrdinal("U_FName"));
@@ -71,6 +73,7 @@ namespace MyGoalAssignment
                 Session["User"] = username;
                 Session["U_FName"] = U_FName;
                 Session["U_LName"] = U_LName;
+                Session["ID"] = Id;
 
 
                 // Redirect the user to the protected page

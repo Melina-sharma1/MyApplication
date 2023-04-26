@@ -82,6 +82,7 @@
     <Content Include="Signup.aspx" />
     <Content Include="Skill.aspx" />
     <Content Include="styles\site.css" />
+    <Content Include="Update.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="Skill.aspx.designer.cs">
       <DependentUpon>Skill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
