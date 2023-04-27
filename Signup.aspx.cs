@@ -24,6 +24,7 @@ namespace MyGoalAssignment
             //declare sql command
             SqlCommand comInsert = new SqlCommand(SqlDataReg.InsertCommand);
 
+            //get the input value to the parameter
             comInsert.Connection= conReg;
             comInsert.Parameters.AddWithValue("U_Email", email.Text);
             comInsert.Parameters.AddWithValue("U_Password", password.Text);
@@ -46,6 +47,7 @@ namespace MyGoalAssignment
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
+            //once signed up, redirect the user to login page. 
             Response.Redirect("Login.aspx");
         }
     }
