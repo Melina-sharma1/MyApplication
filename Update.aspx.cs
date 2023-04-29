@@ -83,7 +83,7 @@ namespace MyGoalAssignment
 
                 confirmPass.Visible = true;
 
-                CompareValidator1.Enabled = true;
+                CompareValidator1.Visible = true;
             }
             else
             {
@@ -92,7 +92,7 @@ namespace MyGoalAssignment
 
                 confirmPass.Visible = false;
 
-                CompareValidator1.Enabled = false;
+                CompareValidator1.Visible = false;
             }
         }
 
@@ -120,9 +120,9 @@ namespace MyGoalAssignment
             }
         }
 
-        protected void YBOchkbox3_CheckedChanged(object sender, EventArgs e)
+        protected void Yobchkbox2_CheckedChanged(Object sender, EventArgs e)
         {
-            if (YBOchkbox3.Checked == true)
+            if (YobChkBox.Checked == true)
             {
                 yobtxt.ReadOnly = false;
             }
@@ -139,16 +139,20 @@ namespace MyGoalAssignment
             SqlCommand comUp = new SqlCommand(updateSql.UpdateCommand);
             comUp.Connection = update;
 
-            comUp.Parameters.AddWithValue("@Email", email.Text);
-            comUp.Parameters.AddWithValue("@Password", passwordtxt.Text);
-            comUp.Parameters.AddWithValue("@FName", fnametxt.Text);
-            comUp.Parameters.AddWithValue("@LName", lnametxt.Text);
-            comUp.Parameters.AddWithValue("@YOB", Convert.ToInt32(yobtxt.Text));
+            comUp.Parameters.AddWithValue("User_ID", Session["ID"]);
+            comUp.Parameters.AddWithValue("U_Email", email.Text);
+            comUp.Parameters.AddWithValue("U_Password", passwordtxt.Text);
+            comUp.Parameters.AddWithValue("U_FName", fnametxt.Text);
+            comUp.Parameters.AddWithValue("U_LName", lnametxt.Text);
+            comUp.Parameters.AddWithValue("U_YoB", Convert.ToInt32(yobtxt.Text));
 
             //open connection,execute ,cloase & redirect
             update.Open();
             comUp.ExecuteNonQuery();
-            Response.Redirect("Update.aspx");
+
+        //    ScriptManager.RegisterStartupScript(this, GetType(), "showSuccessMessage", "showSuccessMessage();", true);
+        
+        Response.Redirect("Update.aspx");
         }
     }
 }

@@ -150,13 +150,13 @@ namespace MyGoalAssignment
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
-        /// YBOchkbox3 control.
+        /// YobChkBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox YBOchkbox3;
+        protected global::System.Web.UI.WebControls.CheckBox YobChkBox;
 
         /// <summary>
         /// yobtxt control.
