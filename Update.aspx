@@ -27,7 +27,7 @@
                      <br />
                      <br />
 
-                    <asp:TextBox ID="confirmPass" runat="server" AutoPostBack="True" TextMode="Password" Width="185px" ReadOnly="True" Visible="False"></asp:TextBox>
+                    <asp:TextBox ID="confirmPass" runat="server" AutoPostBack="True" Width="185px" ReadOnly="True" Visible="False"></asp:TextBox>
                 </td>
                 <td style="height: 94px">
                     <br />
@@ -71,17 +71,17 @@
             </tr>
             <tr>
                 <td style="text-align: center; width: 108px">
-                    <asp:CheckBox ID="YBOchkbox3" runat="server" OnCheckedChanged="YBOchkbox3_CheckedChanged" />
+                    <asp:CheckBox ID="YobChkBox" runat="server" AutoPostBack="True" OnCheckedChanged="Yobchkbox2_CheckedChanged" />
                 </td>
                 <td style="width: 116px; text-align: right">Year of Birth</td>
                 <td style="width: 194px">
-                    <asp:TextBox ID="yobtxt" runat="server" CausesValidation="True" Width="185px" ReadOnly="True"></asp:TextBox>
+                    <asp:TextBox ID="yobtxt" runat="server" CausesValidation="True" Width="185px" ReadOnly="True" AutoPostBack="True"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="yobtxt" ErrorMessage="This Field is Required" ForeColor="Red"></asp:RequiredFieldValidator>
                    <br />
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="yobtxt" ErrorMessage="*Must be a 4 digit year" ValidationExpression="/d{4}" ForeColor="Red"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="yobtxt" ErrorMessage="*Must be a 4 digit year" ValidationExpression="\d{4}" ForeColor="Red"></asp:RegularExpressionValidator>
                 </td>
             </tr>
         </table>
