@@ -12,7 +12,19 @@ namespace MyGoalAssignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["User"] == null)
+            {
+                updateAccount.Visible= false;
+            }
+            else
+            { 
+                updateAccount.Visible= true; 
+            }
+        }
 
+        protected void updateAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Update.aspx");
         }
     }
 }

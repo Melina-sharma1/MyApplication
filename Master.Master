@@ -7,6 +7,15 @@
     <title></title>
  <link rel="stylesheet" href="styles/site.css" />
 
+    <style type="text/css">
+        .auto-style4 {
+            text-align: right;
+        }
+        .auto-style5 {
+            margin-left: 0px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -14,6 +23,9 @@
 
         <header>
             <h1>Welcome!</h1>
+            <p class="auto-style4">
+                <asp:Button ID="updateAccount" runat="server" CausesValidation="False" CssClass="auto-style5" OnClick="updateAccount_Click" Text="Update my account" Visible="False" Width="166px" />
+            </p>
         </header>
 
         <nav class="auto-style1">
