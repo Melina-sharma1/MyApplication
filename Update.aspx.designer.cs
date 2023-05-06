@@ -87,13 +87,22 @@ namespace MyGoalAssignment
         protected global::System.Web.UI.WebControls.RequiredFieldValidator passValid;
 
         /// <summary>
-        /// CompareValidator1 control.
+        /// passValid0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passValid0;
+
+        /// <summary>
+        /// compPwVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compPwVal;
 
         /// <summary>
         /// FNamechkbox1 control.

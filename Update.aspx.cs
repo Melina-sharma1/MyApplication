@@ -12,13 +12,15 @@ namespace MyGoalAssignment
 {
     public partial class Update : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+     
+         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 if (Session["User"] == null)
                 {
-                    Response.Redirect("Login.aspx");
+
+                    //Response.Redirect("Login.aspx");
                 }
                 else
                 {
@@ -61,6 +63,7 @@ namespace MyGoalAssignment
                 }
             }
         }
+        
 
         protected void emailchkbox_CheckedChanged(object sender, EventArgs e)
         {
@@ -83,7 +86,7 @@ namespace MyGoalAssignment
 
                 confirmPass.Visible = true;
 
-                CompareValidator1.Visible = true;
+                //compPwVal.Visible = true;
             }
             else
             {
@@ -92,7 +95,7 @@ namespace MyGoalAssignment
 
                 confirmPass.Visible = false;
 
-                CompareValidator1.Visible = false;
+                //compPwVal.Visible = false;
             }
         }
 
