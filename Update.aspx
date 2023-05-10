@@ -37,9 +37,11 @@
                     
                     <asp:RequiredFieldValidator ID="passValid" runat="server" ControlToValidate="passwordtxt" ErrorMessage="This Field is Required" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
-                     <br />
+                    <br />
 
-                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="passwordtxt" ErrorMessage="Password Must Match" ForeColor="Red" ControlToValidate="confirmPass"></asp:CompareValidator>
+                    <asp:RequiredFieldValidator ID="passValid0" runat="server" ControlToValidate="confirmPass" ErrorMessage="This Field is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+                   <br />
+                    <asp:CompareValidator ID="compPwVal" runat="server" ControlToCompare="passwordtxt" ErrorMessage="Password Must Match" ForeColor="Red" ControlToValidate="confirmPass"></asp:CompareValidator>
 
                 </td>
             </tr>

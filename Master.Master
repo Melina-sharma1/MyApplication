@@ -24,7 +24,8 @@
         <header>
             <h1>Welcome!</h1>
             <p class="auto-style4">
-                <asp:Button ID="updateAccount" runat="server" CausesValidation="False" CssClass="auto-style5" OnClick="updateAccount_Click" Text="Update my account" Visible="False" Width="166px" />
+                <asp:Button ID="logOutbtn" runat="server" CssClass="auto-style5" OnClick="logOutbtn_Click" Text="Logout" Width="130px" />
+                <asp:Button ID="updateAccount" runat="server" CausesValidation="False" CssClass="auto-style5" OnClick="updateAccount_Click" Text="Update account" Visible="False" Width="130px" />
             </p>
         </header>
 
