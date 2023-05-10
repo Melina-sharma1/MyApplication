@@ -67,10 +67,13 @@ namespace MyGoalAssignment
 
         protected void emailchkbox_CheckedChanged(object sender, EventArgs e)
         {
+            //if email is checked allow to edit email
             if (emailchkbox.Checked == true)
             {
                 email.ReadOnly = false;
             }
+            //else disable email field
+
             else
             {
                 email.ReadOnly = true;
@@ -137,11 +140,13 @@ namespace MyGoalAssignment
 
         protected void updateAccount_Click(object sender, EventArgs e)
         {
+            //update to database 
             SqlConnection update = new SqlConnection(updateSql.ConnectionString);
 
             SqlCommand comUp = new SqlCommand(updateSql.UpdateCommand);
             comUp.Connection = update;
 
+            //send entered data to database
             comUp.Parameters.AddWithValue("User_ID", Session["ID"]);
             comUp.Parameters.AddWithValue("U_Email", email.Text);
             comUp.Parameters.AddWithValue("U_Password", passwordtxt.Text);
