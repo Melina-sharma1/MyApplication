@@ -1,5 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="MyGoalAssignment.Update" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
+    
+<script>
+
+    function confirmDelete() {
+        if (confirm("Are you sure you want to delete your account?")) {
+            __doPostBack('deletebtn', '');
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+
     <p>
         <br />
         <table style="width: 100%">
@@ -86,6 +100,14 @@
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="yobtxt" ErrorMessage="*Must be a 4 digit year" ValidationExpression="\d{4}" ForeColor="Red"></asp:RegularExpressionValidator>
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style4" colspan="4">
+        <asp:Button ID="updateAccount" runat="server" Height="44px" Text="Update Account" Width="248px" OnClick="updateAccount_Click" />
+                </td>
+                <td class="auto-style4">
+                    <asp:Button ID="deletebtn" runat="server" Height="44px" OnClick="DeleteButton_Click" OnClientClick="return confirmDelete();" Text="Delete Account" Width="248px" CausesValidation="False" />
+                </td>
+            </tr>
         </table>
     </p>
     <p style="text-align: center">
@@ -112,8 +134,33 @@
                 <asp:Parameter Name="User_ID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:Button ID="updateAccount" runat="server" Height="44px" Text="Update Account" Width="248px" OnClick="updateAccount_Click" />
     </p>
+    <p>
+        <asp:SqlDataSource ID="deleteSql" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [User] WHERE [User_ID] = @User_ID" InsertCommand="INSERT INTO [User] ([U_Email], [U_Password], [U_FName], [U_LName], [U_YoB]) VALUES (@U_Email, @U_Password, @U_FName, @U_LName, @U_YoB)" SelectCommand="SELECT * FROM [User] WHERE ([User_ID] = @User_ID)" UpdateCommand="UPDATE [User] SET [U_Email] = @U_Email, [U_Password] = @U_Password, [U_FName] = @U_FName, [U_LName] = @U_LName, [U_YoB] = @U_YoB WHERE [User_ID] = @User_ID">
+            <DeleteParameters>
+                <asp:Parameter Name="User_ID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="U_Email" Type="String" />
+                <asp:Parameter Name="U_Password" Type="String" />
+                <asp:Parameter Name="U_FName" Type="String" />
+                <asp:Parameter Name="U_LName" Type="String" />
+                <asp:Parameter Name="U_YoB" Type="Int32" />
+            </InsertParameters>
+            <SelectParameters>
+                <asp:Parameter Name="User_ID" Type="Int32" />
+            </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="U_Email" Type="String" />
+                <asp:Parameter Name="U_Password" Type="String" />
+                <asp:Parameter Name="U_FName" Type="String" />
+                <asp:Parameter Name="U_LName" Type="String" />
+                <asp:Parameter Name="U_YoB" Type="Int32" />
+                <asp:Parameter Name="User_ID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+    </p>
+
     <p>
     </p>
     <p>
@@ -124,8 +171,6 @@
     </p>
     <p>
     </p>
-    <p>
-    </p>
-    <p>
-    </p>
+    
+   
 </asp:Content>

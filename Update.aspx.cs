@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace MyGoalAssignment
 {
     public partial class Update : System.Web.UI.Page
@@ -20,7 +21,7 @@ namespace MyGoalAssignment
                 if (Session["User"] == null)
                 {
 
-                    //Response.Redirect("Login.aspx");
+                    Response.Redirect("Login.aspx");
                 }
                 else
                 {
@@ -161,6 +162,33 @@ namespace MyGoalAssignment
         //    ScriptManager.RegisterStartupScript(this, GetType(), "showSuccessMessage", "showSuccessMessage();", true);
         
         Response.Redirect("Update.aspx");
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+            //delete to database 
+            SqlConnection delete = new SqlConnection(deleteSql.ConnectionString);
+
+            SqlCommand comDel = new SqlCommand(deleteSql.DeleteCommand);
+            comDel.Connection = delete;
+
+            //send entered data to database
+            comDel.Parameters.AddWithValue("User_ID", Session["ID"]);
+
+            //open connection,execute ,cloase & redirect
+            delete.Open();
+            comDel.ExecuteNonQuery();
+
+            //clear all the session
+            Session["User"] = null;
+            Session["U_FName"] = null;
+            Session["U_LName"] = null;
+            Session["ID"] = null;
+
+            //redirect to login page
+            Response.Redirect("Login.aspx");
+
         }
     }
 }
